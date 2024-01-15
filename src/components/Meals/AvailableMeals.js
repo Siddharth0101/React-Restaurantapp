@@ -1,36 +1,31 @@
-import Card from "../UI/Card";
-import MealItem from "./MealItem/MealItem";
 import classes from "./AvailableMeals.module.css";
-
+import Card from "../UI/Card";
+import MealItem from "./MealItem";
 const DUMMY_MEALS = [
   {
     id: "m1",
-    name: "Sushi",
-    description: "Finest fish and veggies",
-    price: 22.99,
+    name: "Butter Panner",
+    description:
+      "This Paneer Butter Masala recipe is a rich and creamy dish of paneer (Indian cottage cheese)",
+    price: 5,
   },
   {
     id: "m2",
-    name: "Schnitzel",
-    description: "A german specialty!",
-    price: 16.5,
+    name: "Chole-Bhature",
+    description:
+      "Chole stands for a spiced tangy chickpea curry and Bhatura is a soft and fluffy fried leavened bread",
+    price: 4,
   },
   {
     id: "m3",
-    name: "Barbecue Burger",
-    description: "American, raw, meaty",
-    price: 12.99,
-  },
-  {
-    id: "m4",
-    name: "Green Bowl",
-    description: "Healthy...and green...",
-    price: 18.99,
+    name: "Gulab Jamun",
+    description:
+      "Gulab jamun is an Indian dessert of fried dough balls that are soaked in a sweet, sticky sugar syrup",
+    price: 2,
   },
 ];
-
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map((meal) => (
+  const MealList = DUMMY_MEALS.map((meal) => (
     <MealItem
       key={meal.id}
       id={meal.id}
@@ -39,14 +34,12 @@ const AvailableMeals = () => {
       price={meal.price}
     />
   ));
-
   return (
     <section className={classes.meals}>
       <Card>
-        <ul>{mealsList}</ul>
+        <ul className={classes.listColor}>{MealList}</ul>
       </Card>
     </section>
   );
 };
-
 export default AvailableMeals;
